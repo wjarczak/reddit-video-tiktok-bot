@@ -8,7 +8,7 @@
 ## Installation
 
 1. Clone this repository
-2. Rename `.env.template` to `.env` and replace all values with the appropriate fields. To get Reddit keys (**required**), visit [the Reddit Apps page.](https://www.reddit.com/prefs/apps) TL;DR set up an app that is a "script". Copy your keys into the `.env` files.
+2. Rename `.envtemplate` to `.env` and replace all values with the appropriate fields. To get Reddit keys (**required**), visit [the Reddit Apps page.](https://www.reddit.com/prefs/apps) TL;DR set up an app that is a "script". Copy your keys into the `.env` files.
 3. Run `playwright install` and `playwright install-deps`.
 4. Run `pip3 install -r requirements.txt`
 5. Run `python3 main.py`
@@ -18,5 +18,5 @@
 - [❌] Finish Dockerfile (not working rn)
 - [❌] Allowing users to choose a background that is picked instead of the Minecraft one.
 - [✅] Allowing users to choose between any subreddit.
-- [❌] Allowing users to change voice.
+- [✅] Allowing users to change voice.
 - [✅] Download background progress bar

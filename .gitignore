@@ -1,4 +1,10 @@
 assets/
+video_creation/__pycache__/
+utils/__pycache__/
+final_videos/
 .env
 .acc
+.pyc
+videoTEMP*
+titles_used.txt
 reddit-bot-351418-5560ebc49cac.json

@@ -7,7 +7,10 @@ from moviepy.editor import (
     CompositeAudioClip,
     CompositeVideoClip,
 )
+import time
+import os
 from utils.console import print_step
+import shutil
 
 
 W, H = 1080, 1920
@@ -53,8 +56,16 @@ def make_final_video(number_of_clips):
     )
     image_concat.audio = audio_composite
     final = CompositeVideoClip([background_clip, image_concat])
+    file_name =  "video.mp4"
+    cur_time =  str(time.time())
+    if not os.path.isdir("final_videos/" + os.getenv("SUBREDDIT")):
+        os.mkdir("final_videos/" + os.getenv("SUBREDDIT"))
+    os.mkdir("final_videos/" + os.getenv("SUBREDDIT") + "/" + cur_time)
+    
+    video_loc = "final_videos/" + os.getenv("SUBREDDIT")+ "/" + cur_time + "/"
+    shutil.move("title.txt", video_loc)
     final.write_videofile(
-        "assets/final_video.mp4", fps=30, audio_codec="aac", audio_bitrate="192k"
+        video_loc + file_name, fps=30, audio_codec="aac", audio_bitrate="192k"
     )
 
     for i in range(0, number_of_clips):
